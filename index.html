@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chào mừng Ngô Thu Hà</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .gift-container {
+            text-align: center;
+            position: relative;
+        }
+
+        .gift-box {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        .gift-box .lid {
+            width: 150px;
+            height: 30px;
+            background: red;
+            position: absolute;
+            top: 0;
+            border-radius: 5px;
+            transform-origin: center bottom;
+            transform: rotateX(0deg);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .gift-box .box {
+            width: 150px;
+            height: 120px;
+            background: #ff5757;
+            position: absolute;
+            top: 30px;
+            border-radius: 5px;
+        }
+
+        .gift-box .ribbon {
+            width: 150px;
+            height: 10px;
+            background: gold;
+            position: absolute;
+            top: 60px;
+        }
+
+        .open-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f54242;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .open-btn:hover {
+            background-color: #ff7575;
+        }
+
+        .message {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .message.hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gift-container">
+        <div class="gift-box">
+            <div class="lid"></div>
+            <div class="box"></div>
+            <div class="ribbon"></div>
+        </div>
+        <button class="open-btn">Mở Quà</button>
+        <div class="message hidden">
+            <h1>Merry Christmas! 🎄</h1>
+            <p>Chúc người yêu của anh luôn vui vẻ, hạnh phúc và mãi là ánh sáng của đời anh ❤️
+                <br>
+                Yêu em nhiều lắm, Ngô Thu Hà ơi! 😘
+            </p>
+        </div>
+    </div>
+
+</body>
+<script>
+    document.querySelector('.open-btn').addEventListener('click', function () {
+        const lid = document.querySelector('.gift-box .lid');
+        const message = document.querySelector('.message');
+
+        // Mở nắp hộp quà
+        lid.style.transform = 'rotateX(-120deg)';
+
+        // Hiển thị lời chúc
+        setTimeout(() => {
+            message.classList.remove('hidden');
+        }, 500);
+    });
+
+</script>
+
+</html>
